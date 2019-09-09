@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flask Checkerboard</title>
+        <link rel='stylesheet' type='text/css' href="{{url_for('static', filename = 'css/style.css')}}">
+    </head>
+    <body>
+        <div class='container'>
+            {%if display_vertical is not defined and display_horizontal is not defined%}
+                {% for x in range (4)%}
+                <!--div used for the vertical squares, we need 8-->
+                    <div class='vertical'>
+                        <!-- horizontal divs -->
+                        {%for i in range(4)%}
+                            <div class="square1">
+                            </div>
+                            <div class="square2">
+                            </div>
+                        {%endfor%}
+                        <br>
+                        {%for i in range(4)%}
+                            <div class="square2">
+                            </div>
+                            <div class="square1">
+                            </div>
+                        {%endfor%}
+                    </div>
+                {%endfor%}
+            {%endif%}
+            {%if display_vertical is defined and display_horizontal is not defined%}
+                {%for x in range (2)%}
+                    <div class='vertical'>
+                        <!-- horizontal divs -->
+                        {%for i in range(4)%}
+                            <!-- row 1 -->
+                            <div class="square1">
+                            </div>
+                            <div class="square2">
+                            </div>
+                        {%endfor%}
+                        <br>
+                        {%for i in range(4)%}
+                            <!-- row 2 -->
+                            <div class="square2">
+                            </div>
+                            <div class="square1">
+                            </div>
+                        {%endfor%}
+                    </div>
+                {%endfor%}
+            {%endif%}
+            {%if display_vertical is defined and display_horizontal is defined%}
+                {%for x in range (display_vertical)%}
+                    <div class='vertical'>
+                        <!-- horizontal divs -->
+                        {%for i in range(display_horizontal)%}
+                            <!-- row 1 -->
+                            <div class="square1">
+                            </div>
+                            <div class="square2">
+                            </div>
+                        {%endfor%}
+                        <br>
+                        {%for i in range(display_horizontal)%}
+                            <!-- row 2 -->
+                            <div class="square2">
+                            </div>
+                            <div class="square1">
+                            </div>
+                        {%endfor%}
+                    </div>
+                {%endfor%}
+            {% endif %}
+        </div>
+    </body>
+</html>

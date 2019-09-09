@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px
+}
+.container{
+    width: 970px;
+    height: 100px;
+    margin: 80px auto;
+}
+.vertical{
+    margin-top: 0px;
+}
+.square1{
+    height: 35px;
+    width: 35px;
+    margin-left: -4px;
+    display: inline-block;
+    background-color: rgb(215, 76, 76)
+}
+.square2{
+    height: 35px;
+    width: 35px;
+    margin-left: -4px;
+    display: inline-block;
+    background-color: rgb(75, 71, 71)
+}
