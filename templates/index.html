@@ -50,7 +50,7 @@
                     </div>
                 {%endfor%}
             {%endif%}
-            {%if display_vertical is defined and display_horizontal is defined%}
+            {%if display_horizontal is defined and color_a is not defined%}
                 {%for x in range (display_vertical)%}
                     <div class='vertical'>
                         <!-- horizontal divs -->
@@ -67,6 +67,29 @@
                             <div class="square2">
                             </div>
                             <div class="square1">
+                            </div>
+                        {%endfor%}
+                    </div>
+                {%endfor%}
+            {% endif %}
+            <!--color added-->
+            {%if color_a is defined and color_b is defined%}
+                {%for x in range (display_vertical)%}
+                    <div class='vertical'>
+                        <!-- horizontal divs -->
+                        {%for i in range(display_horizontal)%}
+                            <!-- row 1 -->
+                            <div class="square1" style="background-color: {{color_a}}">
+                            </div>
+                            <div class="square2" style="background-color: {{color_b}}">
+                            </div>
+                        {%endfor%}
+                        <br>
+                        {%for i in range(display_horizontal)%}
+                            <!-- row 2 -->
+                            <div class="square2" style="background-color: {{color_b}}">
+                            </div>
+                            <div class="square1" style="background-color: {{color_a}}">
                             </div>
                         {%endfor%}
                     </div>
